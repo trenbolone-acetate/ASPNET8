@@ -1,0 +1,9 @@
+﻿@model WeatherForecast
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">
+            <strong>Cloudiness:</strong> @Model.clouds?.all % <br/>
+            <strong>Visibility:</strong> @((double)Model.visibility / 1000) km
+        </p>
+    </div>
+</div>

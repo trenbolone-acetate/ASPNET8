@@ -1,0 +1,25 @@
+﻿@model ASPNET8.Models.WeatherForecast
+
+
+<h1 class="m-auto text-center p-3 mb-2 bg-light text-black-50 w-50" style="font-size:2.5em;">Weather Forecast for @ViewBag.City!</h1>
+
+<div class="card w-50 m-auto">
+    <div class="card-body">
+        <h5 class="card-title" style="font-size:1.5em;">@Model.weather[0]?.main</h5>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.weather[0]?.description</h6>
+
+        <div class="card-deck">
+            @{
+                await Html.RenderPartialAsync("TemperatureCardPartialView", Model.main);
+            }
+
+            @{
+                await Html.RenderPartialAsync("WindCardPartialView", Model);
+            }
+
+            @{
+                await Html.RenderPartialAsync("AdditionalDataCardPartialView", Model);
+            }
+        </div> 
+    </div> 
+</div> 

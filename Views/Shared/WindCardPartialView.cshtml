@@ -1,0 +1,10 @@
+﻿@model WeatherForecast
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">
+            <strong>Wind speed:</strong> @Model.wind?.speed m/s <br/>
+            <strong>Wind direction:</strong> @Model.wind?.deg ° <br/>
+            <strong>Gust:</strong> @Model.wind?.gust m/s
+        </p>
+    </div>
+</div>

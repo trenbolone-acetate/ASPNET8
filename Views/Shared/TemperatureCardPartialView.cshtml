@@ -1,0 +1,10 @@
+﻿@model Main
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">
+            <strong>Temperature:</strong> @((Model?.temp - 273.15 ?? 0.0).ToString("0.00")) °C <br/>
+            <strong>Feels like:</strong> @((Model?.feels_like - 273.15 ?? 0.0).ToString("0.00")) °C <br/>
+            <strong>Humidity:</strong> @Model?.humidity %
+        </p>
+    </div>
+</div>
