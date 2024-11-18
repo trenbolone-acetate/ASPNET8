@@ -1,35 +1,39 @@
 ﻿@model List<Product>
 
 <h2>Список продуктів:</h2>
-<ul>
-    @foreach (var product in Model)
-    {
-        <li>#@product.ID @product.Name - @product.Price$ (@product.CreatedDate)</li>
-    }
-</ul>
+//lb9
+@await Component.InvokeAsync("ProductsTable", new { products = Model })
 
-<h2>Таблиця продуктів:</h2>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Created Date</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var product in Model)
-    {
-        <tr>
-            <td>@product.ID</td>
-            <td>@product.Name</td>
-            <td>@product.Price$</td>
-            <td>@product.CreatedDate</td>
-        </tr>
-    }
-    </tbody>
-</table>
+@* <h2>Список продуктів:</h2> *@
+@* <ul> *@
+@*     @foreach (var product in Model) *@
+@*     { *@
+@*         <li>#@product.ID @product.Name - @product.Price$ (@product.CreatedDate)</li> *@
+@*     } *@
+@* </ul> *@
+@* *@
+@* <h2>Таблиця продуктів:</h2> *@
+@* <table> *@
+@*     <thead> *@
+@*     <tr> *@
+@*         <th>ID</th> *@
+@*         <th>Name</th> *@
+@*         <th>Price</th> *@
+@*         <th>Created Date</th> *@
+@*     </tr> *@
+@*     </thead> *@
+@*     <tbody> *@
+@*     @foreach (var product in Model) *@
+@*     { *@
+@*         <tr> *@
+@*             <td>@product.ID</td> *@
+@*             <td>@product.Name</td> *@
+@*             <td>@product.Price$</td> *@
+@*             <td>@product.CreatedDate</td> *@
+@*         </tr> *@
+@*     } *@
+@*     </tbody> *@
+@* </table> *@
 <style>
     table{
         width: 30%;

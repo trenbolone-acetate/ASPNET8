@@ -1,0 +1,40 @@
+﻿@model ASPNET8.Models.WeatherForecast
+<h1 class="m-auto text-center p-3 mb-2 bg-light text-black-50 w-50" style="font-size:2.5em;">Weather Forecast for Kyiv!</h1>
+
+<div class="card w-50 m-auto">
+    <div class="card-body">
+        <h5 class="card-title">@Model.weather[0]?.main</h5>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.weather[0]?.description</h6>
+
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">
+                        <strong>Temperature:</strong> @((Model.main?.temp - 273.15 ?? 0.0).ToString("0.00")) °C <br/>
+                        <strong>Feels like:</strong> @((Model.main?.feels_like - 273.15 ?? 0.0).ToString("0.00")) °C <br/>
+                        <strong>Humidity:</strong> @Model.main?.humidity %
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">
+                        <strong>Wind speed:</strong> @Model.wind?.speed m/s <br/>
+                        <strong>Wind direction:</strong> @Model.wind?.deg ° <br/>
+                        <strong>Gust:</strong> @Model.wind?.gust m/s
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">
+                        <strong>Cloudiness:</strong> @Model.clouds?.all % <br/>
+                        <strong>Visibility:</strong> @((double)Model.visibility/1000) km
+                    </p>
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div> 
